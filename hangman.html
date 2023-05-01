@@ -1,11 +1,12 @@
+
+
 <!DOCTYPE html>
-<!-- <html lang="en"> -->
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="Style/Deema.css"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="pics/flag.png">
-    <title>Deutsch lernen macht Spaß - Hangman Game</title>
+    <title>Hangman Game</title>
     
     <style>
         * {
@@ -411,8 +412,7 @@ function showHome()
           return false;
       }
 
-      
-    var width = window.innerWidth;
+      var width = window.innerWidth;
 		var height = window.innerHeight;
 
 		// create a function to generate a random number between two values
@@ -425,36 +425,36 @@ function showHome()
 
 		// create a function to generate a new cry image and add it to the page
 		function createCry() {
-      // create a new image element
-      var cry = document.createElement('img');
-      cry.src = "pics/cry.png"; // replace with the path to your cry image
-      cry.style.position = 'absolute';
+		// create a new image element
+		var cry = document.createElement('img');
+		cry.src = "pics/cry.png"; // replace with the path to your cry image
+		cry.style.position = 'absolute';
 
-      // set the initial position of the image to a random location on the screen
-      var x = random(0, width);
-      var y = random(0, height);
-      cry.style.left = x + 'px';
-      cry.style.top = y + 'px';
+		// set the initial position of the image to a random location on the screen
+		var x = random(0, width);
+		var y = random(0, height);
+		cry.style.left = x + 'px';
+		cry.style.top = y + 'px';
 
-      // set the initial size and rotation of the image
-      var size = random(100, 20);
-      cry.style.width = size + 'px';
-      cry.style.transform = 'rotate(' + random(0, 360) + 'deg)';
+		// set the initial size and rotation of the image
+		var size = random(100, 20);
+		cry.style.width = size + 'px';
+		cry.style.transform = 'rotate(' + random(0, 360) + 'deg)';
 
-      // add the image to the page
-      document.body.appendChild(cry);
+		// add the image to the page
+		document.body.appendChild(cry);
 
-      // add the image to the array
-      crys.push(cry);
+		// add the image to the array
+		crys.push(cry);
 
-      // animate the image to move upwards and disappear off the top of the screen
-      var duration = random(5000, 1000);
-      var delay = random(0, 50);
-      setTimeout(function() {
-        cry.style.transition = 'transform ' + duration + 'ms linear, opacity ' + duration + 'ms linear';
-        cry.style.transform = 'translateY(-' + height + 'px) rotate(' + random(0, 360) + 'deg)';
-        cry.style.opacity = '0';
-      }, delay);
+		// animate the image to move upwards and disappear off the top of the screen
+		var duration = random(5000, 1000);
+		var delay = random(0, 50);
+		setTimeout(function() {
+			cry.style.transition = 'transform ' + duration + 'ms linear, opacity ' + duration + 'ms linear';
+			cry.style.transform = 'translateY(-' + height + 'px) rotate(' + random(0, 360) + 'deg)';
+			cry.style.opacity = '0';
+		}, delay);
 		}
 
       // Letters
@@ -631,7 +631,9 @@ function showHome()
 
       // End Game Function
       function endGameLose() {
-        createCry();
+        for (var i = 0; i < 50; i++) {
+					createCry();
+				}
         // Create Popup Div
         let div = document.createElement("div");
         // Create Text
@@ -643,6 +645,8 @@ function showHome()
         div.className = 'popup';
         // Append To The Body
         document.body.appendChild(div);
+        const audio = new Audio("wrong.mp3");
+				audio.play();
       }
     </script>
   </body>
