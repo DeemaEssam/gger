@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
@@ -11,7 +10,7 @@
 
 			:root{
 				--bgcol:#37474F;
-				--mcol0:#f629e2;
+				--mcol0:#f629ca;
 				--mcol1:#2196F3;
 				--mcol2:#1976D2;
 				--txtcol0:#90A4AE;
@@ -114,7 +113,7 @@
 			#question10 {
 				position:fixed;
 				width: 51vh;
-				height:52vh;
+				height:64vh;
 				font-size:5vh;
 				font-weight:bold;
 				color:var(--whitecol);
@@ -178,13 +177,20 @@
 
 		<div id="difficulty_container">
 			<div class="difficulty_button active">
+				<div id="shuffle-button">Shuffle</div>
+			</div>
+		</div>
+
+		<div id="difficulty_container">
+			<div class="difficulty_button active">
 				<div onclick="showHome()">Home page</div>
 			</div>
 		</div>
+		
 	
 		<div id="question1">
 			<form>
-			<label style="font-size: 30px;"  for="1st">zwei - null = ?</label><br><br>
+			<label style="font-size: 30px;"  for="1st">zwei - null = ?</label><br><br><br>
 			<input type="radio" id="sechs" name="1st" value="sechs">
 			<label style="font-size: 30px;"  for="sechs">sechs</label><br>
 
@@ -206,7 +212,7 @@
 			<input type="radio" id="dreißig" name="2nd" value="dreißig">
 			<label style="font-size: 25px;" for="dreißig">dreißig</label><br>
 
-			<input type="radio" id="dreizehn" name="2nd" value="dreizehn"><!--1111111
+			<input type="radio" id="dreizehn" name="2nd" value="dreizehn">
 			<label style="font-size: 25px;" for="dreizehn">dreizehn</label><br><br>
 			<input style="font-size: 20px;"  type="submit" value="Submit" >
 			</form>
@@ -216,7 +222,7 @@
 			<form>
 			<label style="font-size: 30px;"  for="3rd">dreißig + zehn = ?</label><br><br>
 			<input type="radio" id="vierzig" name="3rd" value="vierzig">
-			<label style="font-size: 25px;" for="vierzig">vierzig</label><br><!--1111
+			<label style="font-size: 25px;" for="vierzig">vierzig</label><br>
 
 			<input type="radio" id="vierzig" name="3rd" value="dreißig">
 			<label style="font-size: 25px;" for="dreißig">dreißig</label><br>
@@ -229,7 +235,7 @@
 
 		<div id="question4">
 			<form>
-			<label style="font-size: 30px;"  for="4th">achtzehn + acht = ?</label><br><br>
+			<label style="font-size: 30px;"  for="4th">achtzehn + acht = ?</label><br><br><br>
 			<input type="radio" id="neunundachtzig" name="4th" value="neunundachtzig">
 			<label style="font-size: 25px;"  for="neunundachtzig">neunundachtzig</label><br>
 
@@ -238,14 +244,14 @@
 
 			<input type="radio" id="sechsundzwanzig" name="4th" value="sechsundzwanzig">
 			<label style="font-size: 25px;"  for="sechsundzwanzig">sechsundzwanzig</label><br><br><!--llllll -->
-			<input style="font-size: 20px;"  type="submit" value="Submit">
+			<input style="font-size: 25px;"  type="submit" value="Submit">
 			</form>
 		</div>
 		
 		<!-- <div id="question5">
 			<form>
 			<label style="font-size: 25px;"  for="5th">ein­hundert + eins = ?</label><br><br>
-			<input type="radio" id="einhundertundeins" name="5th" value="einhundertundeins"><!--1111
+			<input type="radio" id="einhundertundeins" name="5th" value="einhundertundeins">
 			<label style="font-size: 25px;"  for="einhundertundeins">einhundertundeins</label><br>
 
 			<input type="radio" id="neunhundertneun" name="5th" value="neunhundertneun">
@@ -257,28 +263,32 @@
 			</form>
 		</div> -->
 
+
+		
+
+
 		<div id="question6">
 			<form>
-			<label style="font-size: 18px;"  for="6th">drei­hundert­vier­und­zwanzig <br>+ drei­hundert­vier­und­zwanzig = ?</label><br>
-			<input type="radio" id="siebenhundert­acht­und­vierzig" name="6th" value="siebenhundert­acht­und­vierzig"><!--11111-->
-			<label style="font-size: 15px;" for="siebenhundert­acht­und­vierzig">siebenhundert­acht­und­vierzig</label><br>
+			<label style="font-size: 17px;"  for="6th">dreihundertvierundzwanzig <br>+ dreihundertvierundzwanzig = ?</label><br><br>
+			<input type="radio" id="sechshundertachtundvierzig" name="6th" value="sechshundertachtundvierzig">
+			<label style="font-size: 17px;"  for="sechshundertachtundvierzig">sechshundertachtundvierzig</label><br>
 
 			<input type="radio" id="vierhundertsechsundachtzig" name="6th" value="vierhundertsechsundachtzig">
-			<label style="font-size: 15px;" for="vierhundertsechsundachtzig">vierhundertsechs und achtzig</label><br>
+			<label style="font-size: 17px;" for="vierhundertsechsundachtzig">vierhundertsechsundachtzig</label><br>
 
 			<input type="radio" id="achthundertsechsundvierzig" name="6th" value="achthundertsechsundvierzig">
-			<label style="font-size: 15px;" for="achthundertsechsundvierzig">achthundertsechs und vierzig</label><br><br>
-			<input style="font-size: 20px;"  type="submit" value="Submit" >
+			<label style="font-size: 17px;" for="achthundertsechsundvierzig">achthundertsechsundvierzig</label><br><br>
+			<input style="font-size: 25px;"  type="submit" value="Submit" >
 			</form>
 		</div>
-		
+
 		<div id="question7">
 			<form>
-			<label style="font-size: 20px;"  for="7th">ein­hundert­fünfzig <br> + drei­hundert­fünfzig = ?</label><br>
+			<label style="font-size: 20px;"  for="7th">ein­hundert­fünfzig <br> + drei­hundert­fünfzig = ?</label><br><br>
 			<input type="radio" id="vierhundert" name="7th" value="vierhundert">
 			<label style="font-size: 20px;"  for="vierhundert">vierhundert</label><br>
 
-			<input type="radio" id="fünfhundert" name="7th" value="fünfhundert"><!--1111111111-->
+			<input type="radio" id="fünfhundert" name="7th" value="fünfhundert">
 			<label style="font-size: 20px;"  for="fünfhundert">fünfhundert</label><br>
 
 			<input type="radio" id="dreihunderts" name="7th" value="dreihunderts">
@@ -319,18 +329,23 @@
 		
 		<div id="question10">
 			<form>
-			<label style="font-size: 15px;"  for="10th">zweihundertneunundneunzig <br> + zweitausend = ?</label><br>
+			<label style="font-size: 16px;"  for="10th">zweihundertneunundneunzig <br> + zweitausend = ?</label><br>
 			<input type="radio" id="neuntausendneunhundertzweiundzwanzig" name="10th" value="neuntausendneunhundertzweiundzwanzig">
-			<label style="font-size: 12px;"  for="neuntausendneunhundertzweiundzwanzig">neuntausendneunh und ertzwei und zwanzig</label><br>
+			<label style="font-size: 15px;"  for="neuntausendneunhundertzweiundzwanzig">neuntausendneunhundertzwei und zwanzig</label><br>
 
 			<input type="radio" id="zweitausend­zweihundert­neunundneunzig" name="10th" value="zweitausend­zweihundert­neunundneunzig"><!--1111111-->
-			<label style="font-size: 12px;"  for="zweitausend­zweihundert­neunundneunzig">zweitausend­zweih und ert­neun und neunzig</label><br>
+			<label style="font-size: 15px;"  for="zweitausend­zweihundert­neunundneunzig">zweitausendzweihundertneun und neunzig</label><br>
 
 			<input type="radio" id="achtundneunzig" name="10th" value="achtundneunzig">
-			<label style="font-size: 12px;"  for="achtundneunzig">achtundneunzig</label><br><br>
-			<input style="font-size: 20px;"  type="submit" value="Submit">
+			<label style="font-size: 15px;"  for="achtundneunzig">achtundneunzig</label><br><br>
+			<input style="font-size: 23px;"  type="submit" value="Submit">
 			</form>
 		</div>
+
+
+		<!-- <button id="shuffle-button">Shuffle</button> -->
+
+
 	</body>
 <!-------------------------------------------------------------------------------------------------------------------->
     <script>
@@ -541,7 +556,7 @@
 			event.preventDefault();
 			const answer6 = document.querySelector('input[name="6th"]:checked');
 			const correctAnswers = {
-			"6th": "siebenhundert­acht­und­vierzig"
+			"6th": "sechshundertachtundvierzig"
 			};
 
 			if (answer6 && answer6.value === correctAnswers["6th"]) {
@@ -683,11 +698,26 @@
 						this.positionBlockAtCoord(blockIdx,x,y);
 						block.addEventListener('click',(e)=>this.onClickOnBlock(blockIdx));
 						this.indexes.push(blockIdx);
+
 					}
 				}
 				this.indexes.push(this.count-1);
 				this.randomize(this.difficulty);
+
+				// Find the shuffle button element by its id
+const shuffleButton = document.getElementById('shuffle-button');
+
+// Capture the Game instance using a variable
+const game = this;
+
+// Add a click event listener to the shuffle button
+shuffleButton.addEventListener('click', () => {
+  // Call the randomize method of the Game class to shuffle the blocks
+  game.randomize(game.difficulty);
+});
+
 			}
+
 
 			randomize(iterationCount){//move a random block (x iterationCount)
 				for(let i=0;i<iterationCount;i++){
@@ -757,9 +787,19 @@
 				this.randomize(this.difficulty);
 			}
 
-		}
+
+
+
+
+}
+
+
+
+		
 
 		var game=new Game(1);//instantiate a new Game
+
+
 	</script>
 
 	<audio id="horay-sound">
