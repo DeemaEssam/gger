@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -218,6 +216,7 @@
         .letters-guess {
           margin: 10px auto;
           background-color: #263238ab;
+          color: #ff00d9;
           padding: 20px;
           display: flex;
           justify-content: center;
@@ -626,6 +625,8 @@ function showHome()
         div.className = 'popup';
         // Append To The Body
         document.body.appendChild(div);
+        const audio = new Audio("horay.mp3");
+				audio.play();
       }
 
 
