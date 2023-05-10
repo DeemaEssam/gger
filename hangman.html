@@ -579,19 +579,27 @@ function showHome()
 
           if (theStatus !== true) {
 
-          // Increase The Wrong Attempts
-          wrongAttempts++;
+            // Increase The Wrong Attempts
+            wrongAttempts++;
 
-          // Add Class Wrong On The Draw Element
-          theDraw.classList.add(`wrong-${wrongAttempts}`);
+            // Add Class Wrong On The Draw Element
+            theDraw.classList.add(`wrong-${wrongAttempts}`);
 
-          // Play Fail Sound
-          document.getElementById("fail").play();
+            // Play Fail Sound
+            document.getElementById("fail").play();
 
-          if (wrongAttempts === 8) {
-              endGameLose();
-              lettersContainer.classList.add("finished");
-          }
+            if (wrongAttempts === 8) {
+                endGameLose();
+                lettersContainer.classList.add("finished");
+
+                for (var i = 0; i < 50; i++) {
+                createCry();
+              }
+              const audio = new Audio("wrong.mp3");
+              audio.play();
+
+              return false;
+            }
           } else {
           // Play Success Sound
               document.getElementById("success").play();
