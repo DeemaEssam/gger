@@ -1,165 +1,164 @@
-
 <!DOCTYPE html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Puzzle game</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
 
-		<style>
-			*{margin:0;padding:0;box-sizing:border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-			:root{
-				--bgcol:#37474F;
-				--mcol0:#f629ca;
-				--mcol1:#2196F3;
-				--mcol2:#1976D2;
-				--txtcol0:#90A4AE;
-				--txtcol1:#607D8B;
-				--whitecol:#ECEFF1;
-				--darkcol:#263238;
-			}
+        :root {
+            --bgcol: #37474F;
+            --mcol0: #f629ca;
+            --mcol1: #2196F3;
+            --mcol2: #1976D2;
+            --txtcol0: #90A4AE;
+            --txtcol1: #607D8B;
+            --whitecol: #ECEFF1;
+            --darkcol: #263238;
+        }
 
-			body{
-				display:flex;
-				flex-direction:column;
-				align-items:center;
-				padding-top:15vh;
-				background-image: url(pics/background.gif);
-			}
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15vh;
+            background-image: url(pics/background.gif);
+        }
 
-			#puzzle_container{
-				position: relative;
-				width: 50vh;
-				height:50vh;
-				background-color:var(--darkcol);
-				border-radius:8px;
-				border:1px solid var(--mcol0);
-				box-shadow:0px 8px 0px var(--mcol0);
-			}
+        #puzzle_container {
+            position: relative;
+            width: 50vh;
+            height: 50vh;
+            background-color: var(--darkcol);
+            border-radius: 8px;
+            border: 1px solid var(--mcol0);
+            box-shadow: 0px 8px 0px var(--mcol0);
+        }
 
-			.puzzle_block{
-				position:absolute;
-				left:0;
-				top:0;
-				width:33.4%;
-				height:33.4%;
-				background-color:var(--txtcol1);
-				color:var(--whitecol);
-				font-size:5vh;
-				font-weight:bold;
-				text-align:center;
-				padding-top:3%;
-				cursor: pointer;
-				user-select:none;
-				transition:left 0.3s,top 0.3s;
-				border-radius: 8px;
-			}
+        .puzzle_block {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 33.4%;
+            height: 33.4%;
+            background-color: var(--txtcol1);
+            color: var(--whitecol);
+            font-size: 5vh;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 3%;
+            cursor: pointer;
+            user-select: none;
+            transition: left 0.3s, top 0.3s;
+            border-radius: 8px;
+        }
 
-			/*difficulty container*/
-			#difficulty_container{
-				display:flex;
-				flex-direction:row;
-				width:50vh;
-				height:10vh;
-				background-color:var(--darkcol);
-				border-radius:8px;
-				margin-top:22px;
-				
-			}
-			.difficulty_button{
-				flex-grow:1;
-				background-color:inherit;
-				text-align:center;
-				font-size:3vh;
-				font-weight:bold;
-				padding-top:5%;
-				margin:4px;
-				cursor: pointer;
-				transition:font-size 0.3s;
-				color:rgb(189, 54, 178);
-			}
+        #difficulty_container {
+            display: flex;
+            flex-direction: row;
+            width: 50vh;
+            height: 10vh;
+            background-color: var(--darkcol);
+            border-radius: 8px;
+            margin-top: 22px;
+        }
 
-			#timer{
-				flex-grow:1;
-				background-color:inherit;
-				color:var(--mcol2);
-				text-align:center;
-				font-size:3vh;
-				font-weight:bold;
-				padding-top:5%;
-				margin:4px;
-				cursor: pointer;
-				transition:font-size 0.3s;
-			}
+        .difficulty_button {
+            flex-grow: 1;
+            background-color: inherit;
+            text-align: center;
+            font-size: 3vh;
+            font-weight: bold;
+            padding-top: 5%;
+            margin: 4px;
+            cursor: pointer;
+            transition: font-size 0.3s;
+            color: rgb(189, 54, 178);
+        }
 
-			.difficulty_button:hover{
-				opacity:0.8;
-				font-size:3.5vh;
-			}
-			.difficulty_button.active{
-				background-color:inherit;
-				color:var(--mcol0);
-			}
+        #timer {
+            flex-grow: 1;
+            background-color: inherit;
+            color: var(--mcol2);
+            text-align: center;
+            font-size: 3vh;
+            font-weight: bold;
+            padding-top: 5%;
+            margin: 4px;
+            cursor: pointer;
+            transition: font-size 0.3s;
+        }
 
-			#question1,
-			#question2,
-			#question3,
-			#question4,
-			#question5,
-			#question6,
-			#question7,
-			#question8,
-			#question9,
-			#question10 {
-				position:fixed;
-				width: 51vh;
-				height:64vh;
-				font-size:5vh;
-				font-weight:bold;
-				color:var(--whitecol);
-				text-align:center;
-				padding-top:1%;
-				cursor: pointer;
-				background-color: rgba(0, 0, 0, 0.895);
-				z-index: 2;
-				border-radius: 8px;
-			}
+        .difficulty_button:hover {
+            opacity: 0.8;
+            font-size: 3.5vh;
+        }
 
-			.congrats-message {
-				position: absolute;
-				top: 37%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				padding: 20px;
-				/* background-color:rgba(0, 0, 0, 0.895); */
-				background-color:rgba(255, 255, 255, 0.895);
-				border-radius: 5px;
-				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-				color: #000000;
-				font-size: 24px;
-				font-weight: bold;
-				text-align: center;
-				z-index: 999;
-				animation: showCongratsMsg 1s ease-in-out;
-			}
+        .difficulty_button.active {
+            background-color: inherit;
+            color: var(--mcol0);
+        }
 
-			@keyframes showCongratsMsg {
-			0% {
-				opacity: 0;
-				transform: translate(-50%, -60%);
-			}
-			100% {
-				opacity: 1;
-				transform: translate(-50%, -50%);
-			}
-			}
+        #question1,
+        #question2,
+        #question3,
+        #question4,
+        #question5,
+        #question6,
+        #question7,
+        #question8,
+        #question9,
+        #question10 {
+            position: fixed;
+            width: 51vh;
+            height: 64vh;
+            font-size: 5vh;
+            font-weight: bold;
+            color: var(--whitecol);
+            text-align: center;
+            padding-top: 1%;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.895);
+            z-index: 2;
+            border-radius: 8px;
+        }
 
-			/* Hide the audio element by default */
-			#audio-container {
-			display: none;
-			}
-		</style>
+        .congrats-message {
+            position: absolute;
+            top: 37%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.895);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #000000;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 999;
+            animation: showCongratsMsg 1s ease-in-out;
+        }
+
+        @keyframes showCongratsMsg {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
 	</head>
 
 	<body>
