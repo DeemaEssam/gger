@@ -360,7 +360,7 @@
 		var div10 = document.getElementById("question9");
 		var div11 = document.getElementById("question10");
 
-			// set the initial state of the div elements
+	    // set the initial state of the div elements
 		div1.style.display = "block";
 		div2.style.display = "none";
 		div3.style.display = "none";
@@ -375,7 +375,7 @@
 
 		setTimeout(function() {
 			div1.style.display = "block";
-			div9.style.display = "block";
+			div2.style.display = "block";
 		}, 100);
 
 		var width = window.innerWidth;
@@ -433,7 +433,7 @@
 			};
 
 			if (answer1 && answer1.value === correctAnswers["1st"]) {
-			div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "block";
+			div1.style.display = "block"; div2.style.display = "block"; div3.style.display = "none";
 			div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none";
 			div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none";
 			div10.style.display = "none"; div11.style.display = "none";
@@ -458,8 +458,8 @@
 			};
 
 			if (answer2 && answer2.value === correctAnswers["2nd"]) {
-				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
-			div4.style.display = "block"; div5.style.display = "none"; div6.style.display = "none";
+				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "block";
+			div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none";
 			div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none";
 			div10.style.display = "none"; div11.style.display = "none";
 			} else {
@@ -484,7 +484,7 @@
 
 			if (answer3 && answer3.value === correctAnswers["3rd"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
-			div4.style.display = "none"; div5.style.display = "block"; div6.style.display = "none";
+			div4.style.display = "block"; div5.style.display = "none"; div6.style.display = "none";
 			div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none";
 			div10.style.display = "none"; div11.style.display = "none";
 				} else {
@@ -509,7 +509,7 @@
 
 			if (answer4 && answer4.value === correctAnswers["4th"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
-			div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "block";
+			div4.style.display = "none"; div5.style.display = "block"; div6.style.display = "none";
 			div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none";
 			div10.style.display = "none"; div11.style.display = "none";
 				} else {
@@ -534,8 +534,8 @@
 
 			if (answer5 && answer5.value === correctAnswers["5th"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
-				div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none"; 
-				div7.style.display = "block"; div8.style.display = "none"; div9.style.display = "none"; 
+				div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "block"; 
+				div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none"; 
 				div10.style.display = "none"; div11.style.display = "none";
 				} else {
 					for (var i = 0; i < 50; i++) {
@@ -560,7 +560,7 @@
 			if (answer6 && answer6.value === correctAnswers["6th"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
 				div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none"; 
-				div7.style.display = "none"; div8.style.display = "block"; div9.style.display = "none"; 
+				div7.style.display = "block"; div8.style.display = "none"; div9.style.display = "none"; 
 				div10.style.display = "none"; div11.style.display = "none";
 			} else {
 				for (var i = 0; i < 50; i++) {
@@ -585,7 +585,7 @@
 			if (answer7 && answer7.value === correctAnswers["7th"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
 				div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none"; 
-				div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "block"; 
+				div7.style.display = "none"; div8.style.display = "block"; div9.style.display = "none"; 
 				div10.style.display = "none"; div11.style.display = "none";
 				} else {
 						for (var i = 0; i < 50; i++) {
@@ -610,8 +610,8 @@
 			if (answer8 && answer8.value === correctAnswers["8th"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
 				div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none"; 
-				div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none"; 
-				div10.style.display = "block"; div11.style.display = "none";
+				div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "block"; 
+				div10.style.display = "none"; div11.style.display = "none";
 			} else {
 					for (var i = 0; i < 50; i++) {
 						createCry();
@@ -635,7 +635,7 @@
 			if (answer9 && answer9.value === correctAnswers["9th"]) {
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";div4.style.display = "none";
 				div5.style.display = "none"; div6.style.display = "none"; div7.style.display = "none"; div8.style.display = "none";
-				div9.style.display = "none"; div10.style.display = "none"; div11.style.display = "block";
+				div9.style.display = "none"; div10.style.display = "block"; div11.style.display = "none";
 			} else {
 					// call the createFlower function multiple times to generate multiple flowers
 					for (var i = 0; i < 50; i++) {
@@ -661,7 +661,7 @@
 				div1.style.display = "block"; div2.style.display = "none"; div3.style.display = "none";
 				div4.style.display = "none"; div5.style.display = "none"; div6.style.display = "none"; 
 				div7.style.display = "none"; div8.style.display = "none"; div9.style.display = "none"; 
-				div10.style.display = "none"; div11.style.display = "none";
+				div10.style.display = "none"; div11.style.display = "block";
 			} else {
 					for (var i = 0; i < 50; i++) {
 					createCry();
