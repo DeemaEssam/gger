@@ -764,6 +764,11 @@
 				congratsMsg.textContent = 'Herzlichen Glückwunsch! Du hast gewonnen!';
 				congratsMsg.classList.add('congrats-message');
 				document.body.appendChild(congratsMsg);
+				// Show the message for 1 second (1000 milliseconds)
+				    setTimeout(function () {
+				        // Hide the message
+				        congratsMessage.style.display = 'none';
+				    }, 3000); // 3000 milliseconds = 3 seconds
 				
 				const audioElement = new Audio('horay.mp3');
 				 audioElement.play();
