@@ -633,8 +633,8 @@ function showHome()
         div.className = 'popup';
         // Append To The Body
         document.body.appendChild(div);
-        const audio = new Audio("horay.mp3");
-				audio.play();
+    //     const audio = new Audio("horay.mp3");
+				// audio.play();
       }
 
 
@@ -649,7 +649,12 @@ function showHome()
         let lineBreak = document.createElement("br");
         let divText = document.createTextNode(`Spiel vorbei, die Nummer war ${randomValueValue}`);
         // Append Text To Div
-        div.appendChild(divText);
+        // div.appendChild(divText);
+		// Show the message for 1 second (1000 milliseconds)
+	    setTimeout(function () {
+		// Hide the message
+		div.appendChild(divText);
+	    }, 3000); // 3000 milliseconds = 3 seconds
         // Add Class On Div
         div.className = 'popup';
         // Append To The Body
